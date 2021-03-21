@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { LoginUser } from "../models/loginUser";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
-//import { JwtHelper, tokenNotExpired } from "angular2-jwt";
 import { Router } from "@angular/router";
 import { AlertifyService } from "./alertify.service";
+import { JwtHelper, tokenNotExpired } from 'angular2-jwt';
 
 
 @Injectable({
@@ -16,10 +16,10 @@ constructor(
     private router: Router,
     private alertifyService: AlertifyService
 ) { }
-path = "http://localhost:61061/api/auth/";
+path = "http://localhost:44322/api/auth/";
 userToken: any;
 decodedToken: any;
-//jwtHelper: JwtHelper = new JwtHelper();
+jwtHelper: JwtHelper = new JwtHelper();
 TOKEN_KEY="token"
 login(loginUser: LoginUser) {
   let headers = new HttpHeaders();
@@ -29,9 +29,9 @@ login(loginUser: LoginUser) {
     .subscribe(data => {
       this.saveToken(data);
       this.userToken = data;
-  //    this.decodedToken = this.jwtHelper.decodeToken(data.toString());
+      this.decodedToken = this.jwtHelper.decodeToken(data.toString());
       this.alertifyService.success("Sisteme giriş yapıldı");
-      this.router.navigateByUrl("/city");
+      this.router.navigateByUrl("/news");
     });
 }
 saveToken(token) {
@@ -45,7 +45,7 @@ logOut(){
 }
 
 loggedIn(){
-  //return tokenNotExpired(this.TOKEN_KEY)
+  return tokenNotExpired(this.TOKEN_KEY)
 }
 
 get token(){
@@ -54,7 +54,7 @@ get token(){
 
 
 getCurrentUserId(){
-//  return this.jwtHelper.decodeToken(this.token).nameid
+return this.jwtHelper.decodeToken(this.token).nameid
 }
 
 }

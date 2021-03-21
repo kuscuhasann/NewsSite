@@ -28,7 +28,7 @@ export class NewsAddComponent implements OnInit {
 
   createNewsForm() {
     this.newsAddForm = this.formBuilder.group({
-      name: ["", Validators.required],
+      title: ["", Validators.required],
       description: ["", Validators.required]
     });
   }
@@ -39,8 +39,7 @@ export class NewsAddComponent implements OnInit {
   add(){
     if(this.newsAddForm.valid){
       this.news = Object.assign({},this.newsAddForm.value)
-      //this.news.userId = this.authService.getCurrentUserId();
-      this.news.userId=1;
+      this.news.userId = this.authService.getCurrentUserId();
       this.newsService.add(this.news);
       
       

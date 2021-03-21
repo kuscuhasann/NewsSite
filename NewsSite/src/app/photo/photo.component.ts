@@ -19,7 +19,7 @@ export class PhotoComponent implements OnInit {
   photos:Photo[]=[];
   uploader:FileUploader;
   hasBaseDropZoneOver =false;
-  baseUrl='http://localhost:61061/api/';
+  baseUrl='http://localhost:44322/api/';
   currentMain:Photo;
   currentNews:any;
 
@@ -32,7 +32,7 @@ export class PhotoComponent implements OnInit {
 
   initializeUploader(){
     this.uploader =new FileUploader({
-      url:this.baseUrl +'cities/'+this.currentNews+'/photos',
+      url:this.baseUrl +'news/'+this.currentNews+'/photos',
       authToken: 'Bearer ' +localStorage.getItem('token'),
       isHTML5: true,
       allowedFileType : ['image'],

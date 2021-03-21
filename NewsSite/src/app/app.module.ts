@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule, Router } from "@angular/router";
-import { NgxGalleryModule } from "ngx-gallery";
+import { NgxGalleryModule } from "@kolkov/ngx-gallery";
 import {NgxEditorModule} from 'ngx-editor';
 import {FileUploadModule} from 'ng2-file-upload';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'

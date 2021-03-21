@@ -15,7 +15,7 @@ constructor(private httpClient: HttpClient,
   private alertifyService:AlertifyService,
   private router:Router) { }
 
-path = "http://localhost:61061/api/";
+path = "https://localhost:44322/api/";
 
 getNews(): Observable<News[]> {
   return this.httpClient.get<News[]>(this.path + "news");
@@ -30,7 +30,7 @@ getPhotosByNews(newsId):Observable<Photo[]>{
 
 add(news){
 this.httpClient.post(this.path + 'news/add',news).subscribe(data=>{
-  this.alertifyService.success("Şehir başarıyla eklendi.")
+  this.alertifyService.success("Haber başarıyla eklendi.")
   this.router.navigateByUrl('/newsDetail/'+data["id"])
 });
 }
