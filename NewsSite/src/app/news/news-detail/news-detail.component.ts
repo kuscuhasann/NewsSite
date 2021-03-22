@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { NewsService } from "../../services/news.service";
 import { News } from "../../models/news";
 import { Photo } from "../../models/photo";
+import {AuthService} from '../../services/auth.service'
 
 import {
   NgxGalleryOptions,
@@ -19,6 +20,7 @@ import {
 export class NewsDetailComponent implements OnInit {
 
   constructor(
+    private authService:AuthService,
     private activatedRoute: ActivatedRoute,
     private newsService: NewsService
   ) { }
@@ -59,6 +61,9 @@ export class NewsDetailComponent implements OnInit {
     }
     return imageUrls;
   }
+  get isAuthenticated(){
+    return this.authService.loggedIn();
+ }
   setGallery(){
     this.galleryOptions = [
       {

@@ -29,6 +29,9 @@ export class PhotoComponent implements OnInit {
     })
     this.initializeUploader();
   }
+  get isAuthenticated(){
+    return this.authService.loggedIn();
+ }
 
   initializeUploader(){
     this.uploader =new FileUploader({
