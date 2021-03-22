@@ -16,7 +16,7 @@ constructor(
     private router: Router,
     private alertifyService: AlertifyService
 ) { }
-path = "http://localhost:44322/api/auth/";
+path = "https://localhost:44322/api/auth/";
 userToken: any;
 decodedToken: any;
 jwtHelper: JwtHelper = new JwtHelper();

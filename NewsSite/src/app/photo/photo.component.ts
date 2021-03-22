@@ -19,7 +19,7 @@ export class PhotoComponent implements OnInit {
   photos:Photo[]=[];
   uploader:FileUploader;
   hasBaseDropZoneOver =false;
-  baseUrl='http://localhost:44322/api/';
+  baseUrl='https://localhost:44322/api/';
   currentMain:Photo;
   currentNews:any;
 

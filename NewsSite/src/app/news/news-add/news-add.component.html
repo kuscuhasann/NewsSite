@@ -10,9 +10,12 @@
           </span>
         </div>
         <div class="form-group">
-          <input type="text" id="description" formControlName="description" class="form-control" placeholder="description" autofocus>
-          
-          
+          <app-ngx-editor class="form-control" id="description"
+           name="description" 
+           [placeholder]="'Hasa'"
+           formControlName="description"
+           [spellcheck]="true">
+          </app-ngx-editor>
           <span class="help-block" *ngIf="newsAddForm.get('description').hasError('required') && newsAddForm.get('description').touched">
            Haber içeriği girilmesi zorunludur.
           </span>
