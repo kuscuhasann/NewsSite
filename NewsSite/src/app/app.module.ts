@@ -15,16 +15,18 @@ import { PhotoComponent } from './photo/photo.component';
 import { NewsComponent } from './news/news.component';
 import {NewsAddComponent} from "./news/news-add/news-add.component"
 import { NewsDetailComponent } from "./news/news-detail/news-detail.component";
+import { CategoryComponent } from './category/category.component';
 
 
 @NgModule({
-   declarations: [	
+   declarations: [		
       AppComponent,
       NavComponent,
       PhotoComponent,
       NewsDetailComponent,
       NewsAddComponent,
-      NewsComponent
+      NewsComponent,
+      CategoryComponent
    ],
    imports: [
       BrowserModule,
