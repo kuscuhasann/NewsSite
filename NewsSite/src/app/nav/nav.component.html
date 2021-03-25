@@ -5,9 +5,17 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
+    <ul id="menu"  class="navbar-nav mr-auto">
+      
+    
+ 
+  <li  class="nav-item">
    
+  <a *ngFor="let category of category" class="nav-link" routerLink="news/category/{{category.id}}"> {{category.categoryName}} </a></li>
+
+      
      
+
       <li class="nav-item">
         <a class="nav-link" *ngIf="isAuthenticated" routerLink="newsadd" routerLinkActive="active">Haber Ekle</a>
       </li>
