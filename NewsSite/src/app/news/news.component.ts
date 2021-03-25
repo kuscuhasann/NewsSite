@@ -1,6 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { News } from "../models/news";
 import { NewsService } from "../services/news.service";
+import { ActivatedRoute } from '@angular/router';
+import { Photo } from "../models/photo";
+import { AuthService } from '../services/auth.service';
+
+import {
+  NgxGalleryOptions,
+  NgxGalleryImage,
+  NgxGalleryAnimation
+} from "ngx-gallery";
+
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -9,12 +20,42 @@ import { NewsService } from "../services/news.service";
 })
 export class NewsComponent implements OnInit {
 
-  constructor(private newsService: NewsService) { }
+  constructor(
+    private newsService: NewsService,
+    private activatedRoute:ActivatedRoute,
+    private authService:AuthService,
+
+    ) { }
+
   news: News[];
+  photos: Photo[] = []
+  galleryOptions: NgxGalleryOptions[];
+  galleryImages: NgxGalleryImage[];
+
   ngOnInit() {
-    this.newsService.getNews().subscribe(data => {
-      this.news = data;
+    this.activatedRoute.params.subscribe(params=>{
+     
+      if(params["categoryId"]){
+        this.getNewsForCategories(params["categoryId"])
+      }else{
+        this.getNewsAll()
+      }
+      
     });
   }
+  getNewsAll() {
+    this.newsService.getNewsAll().subscribe(data=>{
+      this.news = data
+     
+    })   
+  }
+
+  getNewsForCategories(categoryId:number) {
+    this.newsService.getNewsForCategories(categoryId).subscribe(data=>{
+      this.news = data
+    })   
+  }
+
+ 
 }
 

@@ -54,7 +54,7 @@ export class NewsAddComponent implements OnInit {
   }
   getCategories()
   {
-    this.categoryService.getCategoryies().subscribe(data=>{
+    this.categoryService.getCategories().subscribe(data=>{
       this.category=data;
       
     });

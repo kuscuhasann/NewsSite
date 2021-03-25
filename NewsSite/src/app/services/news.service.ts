@@ -15,24 +15,26 @@ constructor(private httpClient: HttpClient,
   private alertifyService:AlertifyService,
   private router:Router) { }
 
-path = "https://localhost:44322/api/";
+path = "https://localhost:44322/api/news/";
 
-getNews(): Observable<News[]> {
-  return this.httpClient.get<News[]>(this.path + "news");
+getNewsAll(): Observable<News[]> {
+  return this.httpClient.get<News[]>(this.path);
+}
+getNewsForCategories(categoryId): Observable<News[]> {
+  return this.httpClient.get<News[]>(this.path+"getbycategory/?categoryId="+categoryId);
 }
 getNewsById(newsId):Observable<News>{
-  return this.httpClient.get<News>(this.path+"news/detail/?id="+newsId)
+  return this.httpClient.get<News>(this.path+"detail/?id="+newsId)
 }
-//URL LER KONTROL EDİLECEK ORALAR DEĞİŞTİRİLMEDİ...
+
 getPhotosByNews(newsId):Observable<Photo[]>{
-  return this.httpClient.get<Photo[]>(this.path + "news/photos/?newsId="+newsId);
+  return this.httpClient.get<Photo[]>(this.path + "photos/?newsId="+newsId);
 }
 
 add(news){
-this.httpClient.post(this.path + 'news/add',news).subscribe(data=>{
+this.httpClient.post(this.path + 'add',news).subscribe(data=>{
   this.alertifyService.success("Haber başarıyla eklendi.")
   this.router.navigateByUrl('/newsDetail/'+data["id"])
 });
 }
-
 }

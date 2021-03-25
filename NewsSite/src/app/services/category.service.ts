@@ -17,15 +17,11 @@ export class CategoryService {
 
 constructor(private httpClient: HttpClient) { }
 
-  path = "https://localhost:44322/api/";
+  path = "https://localhost:44322/api/categories";
 
-  getCategoryies(): Observable<Category[]> {
-    return this.httpClient.get<Category[]>(this.path + "categories");
+  getCategories(): Observable<Category[]> {
+    return this.httpClient.get<Category[]>(this.path);
   }
-  // getCategoriesById(categoryId):Observable<Category>{
-  //   return this.httpClient.get<Category>(this.path+"news/detail/?id="+categoryId)
-  // }
 
- 
- 
+
 }
