@@ -1,0 +1,11 @@
+   <form class="form-signin">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <form *ngIf="!isAuthenticated" #loginForm="ngForm" (ngSubmit)="login()" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" name="userName" 
+      [(ngModel)]="loginUser.userName" required type="text" placeholder="User Name">
+      <input class="form-control mr-sm-2" name="password" 
+      [(ngModel)]="loginUser.password" required type="password" placeholder="Password">
+      <button class="btn btn-secondary my-2 my-sm-0" [disabled]="!loginForm.valid"  type="submit">Giriş</button>
+    </form>
+  <p class="mt-5 mb-3 text-muted">&copy; 2021-2022</p>
+</form>

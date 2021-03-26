@@ -16,17 +16,21 @@ import { NewsComponent } from './news/news.component';
 import {NewsAddComponent} from "./news/news-add/news-add.component"
 import { NewsDetailComponent } from "./news/news-detail/news-detail.component";
 import { CategoryComponent } from './category/category.component';
+import { LoginComponent } from './login/login.component';
+import { DownNavComponent } from './down-nav/down-nav.component';
 
 
 @NgModule({
-   declarations: [		
+   declarations: [				
       AppComponent,
       NavComponent,
       PhotoComponent,
       NewsDetailComponent,
       NewsAddComponent,
       NewsComponent,
-      CategoryComponent
+      CategoryComponent,
+      LoginComponent,
+      DownNavComponent
    ],
    imports: [
       BrowserModule,

@@ -26,14 +26,6 @@ export class NavComponent implements OnInit {
     
   }
 
-  login() {
-    this.authService.login(this.loginUser);
-  }
-
-  logOut(){
-    this.authService.logOut();
-  }
-
   get isAuthenticated(){
      return this.authService.loggedIn();
   }
@@ -44,7 +36,7 @@ export class NavComponent implements OnInit {
       
     });
   }
-  
-  
-
+  logOut(){
+    this.authService.logOut();
+  }
 }
