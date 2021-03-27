@@ -18,6 +18,10 @@ import { NewsDetailComponent } from "./news/news-detail/news-detail.component";
 import { CategoryComponent } from './category/category.component';
 import { LoginComponent } from './login/login.component';
 import { DownNavComponent } from './down-nav/down-nav.component';
+import { LoginGuard } from "./login/login.guard";
+import { AuthService } from "./services/auth.service";
+import { NewsService } from "./services/news.service";
+import { CategoryService } from "./services/category.service";
 
 
 @NgModule({
@@ -41,7 +45,7 @@ import { DownNavComponent } from './down-nav/down-nav.component';
       NgxEditorModule,
       FileUploadModule
    ],
-  providers: [AlertifyService],
+  providers: [AlertifyService,LoginGuard,AuthService,NewsService,CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
