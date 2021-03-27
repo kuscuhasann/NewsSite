@@ -7,11 +7,11 @@ import { LoginComponent } from './login/login.component';
 import { LoginGuard } from './login/login.guard';
 export const appRoutes : Routes = [
   
-  { path: "news", component: NewsComponent },
-  { path: "newsadd", component: NewsAddComponent,canActivate:[LoginGuard] },
-  { path: "newsDetail/:newsId", component: NewsDetailComponent },
-  { path: "news/category/:categoryId", component:NewsComponent},
+  { path: "akis", component: NewsComponent },
+  { path: "newsadd", component: NewsAddComponent,canActivate:[LoginGuard]},
+  { path: "haberler/:newsId/:title", component: NewsDetailComponent },
+  { path: "haber/kategoriler/:categoryId/:categoryName", component:NewsComponent},
   { path: "parathormon", component:LoginComponent},
-  { path: "**", redirectTo: "news", pathMatch: "full" },
+  { path: "**", redirectTo: "akis", pathMatch: "full" },
 
 ];

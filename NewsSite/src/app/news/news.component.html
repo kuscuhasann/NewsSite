@@ -2,9 +2,9 @@
   <div class="row">
     <div *ngFor="let news of news"  class="col-md-4">
       <h1 class="mt-3 pt-3"></h1>
-      <div class="card mb-4 shadow-sm" routerLink="/newsDetail/{{news.id}}" class="btn btn-sm btn-outline-secondary">
+      <div class="card mb-4 shadow-sm" routerLink="/haberler/{{news.id}}/{{news.title}}" class="btn btn-sm btn-outline-secondary">
         <img class="card-img-top" 
-         src="{{news.photoUrl}}" style="img" alt="Card image cap">
+         src="{{news.photoUrl}}" class="img" alt="Card image cap">
         <h1 class="h3 mb-3"><div class="card-body">
          <b> {{news.title}}</b>
         </div></h1>
