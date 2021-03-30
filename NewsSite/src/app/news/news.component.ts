@@ -3,13 +3,13 @@ import { News } from "../models/news";
 import { NewsService } from "../services/news.service";
 import { ActivatedRoute } from '@angular/router';
 import { Photo } from "../models/photo";
-import { AuthService } from '../services/auth.service';
 
 import {
   NgxGalleryOptions,
   NgxGalleryImage,
   NgxGalleryAnimation
 } from "ngx-gallery";
+
 
 
 @Component({
@@ -23,7 +23,6 @@ export class NewsComponent implements OnInit {
   constructor(
     private newsService: NewsService,
     private activatedRoute:ActivatedRoute,
-    private authService:AuthService,
 
     ) { }
 
