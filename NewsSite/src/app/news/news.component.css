@@ -3,8 +3,4 @@ img{
     width: 100%;
     object-fit:fill;
  }
- style{
-    width: 20rem; 
-    height:18rem; 
-    float: left;
-    } 
+ #card:hover{color:red;}
