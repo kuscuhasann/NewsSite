@@ -6,5 +6,9 @@ img{
  #card:hover{color:red;}
  div {
     
-    overflow: hidden;
+    white-space:inherit;
 }
+ #degistirici
+ {
+    cursor:pointer;
+ }
