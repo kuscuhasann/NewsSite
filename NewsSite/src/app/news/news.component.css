@@ -4,3 +4,7 @@ img{
     object-fit:fill;
  }
  #card:hover{color:red;}
+ div {
+    
+    overflow: hidden;
+}
