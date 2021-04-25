@@ -4,10 +4,6 @@ import { NewsService } from "../services/news.service";
 import { ActivatedRoute } from '@angular/router';
 import { Photo } from "../models/photo";
 
-
-
-
-
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -23,7 +19,7 @@ export class NewsComponent implements OnInit {
     ) { }
 
   news: News[];
-  photos: Photo[] = []
+  
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params=>{

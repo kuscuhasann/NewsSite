@@ -3,6 +3,9 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule, Router } from "@angular/router";
 import { appRoutes } from "./routes";
+import { NgxGalleryModule } from 'ngx-gallery-9';
+
+
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
@@ -35,7 +38,7 @@ import { NewsService } from "./services/news.service";
       NewsComponent,
       LoginComponent,
       DownNavComponent,
-      DownNavComponent
+      DownNavComponent,
    ],
    imports: [
       BrowserModule,
@@ -43,7 +46,8 @@ import { NewsService } from "./services/news.service";
       RouterModule.forRoot(appRoutes),
       FormsModule, ReactiveFormsModule,
       FileUploadModule,
-      CKEditorModule
+      CKEditorModule,
+      NgxGalleryModule,
    ],
   providers: [AlertifyService,LoginGuard,AuthService,CategoryService,NewsService],
   bootstrap: [AppComponent]
