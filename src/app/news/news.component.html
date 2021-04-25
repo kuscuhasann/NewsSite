@@ -1,1 +1,14 @@
-
+<div class="container">
+  <div class="row">
+    <div *ngFor="let news of news"  class="col-md-4">
+      <div class="card mb-4 shadow-sm"  style="width: 20rem; height:18rem;" routerLink="/newsDetail/{{news.id}}" class="btn btn-sm btn-light">
+        <img class="card-img-top"src="{{news.photoUrl}}" class="img" alt="Card image cap">
+        <h1 class="card-title h4">
+          <div class="card-body" id="card">
+            <b> {{news.title}}</b>
+          </div>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
