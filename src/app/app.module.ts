@@ -29,7 +29,7 @@ import { NewsService } from "./services/news.service";
 
 
 @NgModule({
-   declarations: [						
+   declarations: [							
       AppComponent,
       NavComponent,
       PhotoComponent,
