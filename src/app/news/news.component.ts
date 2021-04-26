@@ -21,6 +21,9 @@ export class NewsComponent implements OnInit {
   news: News[];
   
 
+  
+  
+
   ngOnInit() {
     this.activatedRoute.params.subscribe(params=>{
      
@@ -35,7 +38,7 @@ export class NewsComponent implements OnInit {
   getNewsAll() {
     this.newsService.getNewsAll().subscribe(data=>{
       this.news = data
-     
+      this.news= this.news.slice().reverse();
     })   
   }
 
