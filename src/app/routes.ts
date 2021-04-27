@@ -9,8 +9,8 @@ export const appRoutes : Routes = [
   
   { path: "news", component: NewsComponent },
   { path: "newsadd", component: NewsAddComponent,canActivate:[LoginGuard] },
-  { path: "newsDetail/:newsId", component: NewsDetailComponent },
-  { path: "news/category/:categoryId", component:NewsComponent},
+  { path: "newsDetail/:newsId/:title", component: NewsDetailComponent },
+  { path: "news/category/:categoryId/:categoryName", component:NewsComponent},
   { path: "parathormon", component:LoginComponent},
   { path: "**", redirectTo: "news", pathMatch: "full" },
 
