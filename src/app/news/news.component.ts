@@ -20,10 +20,6 @@ export class NewsComponent implements OnInit {
 
   news: News[];
   
-
-  
-  
-
   ngOnInit() {
     this.activatedRoute.params.subscribe(params=>{
      

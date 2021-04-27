@@ -10,7 +10,6 @@ import {
 import { News } from "../../models/news";
 import { AuthService } from "../../services/auth.service";
 import { CategoryService } from 'src/app/services/category.service';
-import { AlertifyService } from 'src/app/services/alertify.service';
 
 @Component({
   selector: 'app-news-add',
@@ -25,7 +24,7 @@ export class NewsAddComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService:AuthService,
     private categoryService:CategoryService,
-    private alertifyService:AlertifyService
+ 
   ) { }
 
   news: News;

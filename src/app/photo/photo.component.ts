@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FileUploader} from 'ng2-file-upload'
-import {AlertifyService} from '../services/alertify.service'
 import {AuthService} from '../services/auth.service'
 import {ActivatedRoute} from '@angular/router'
 import {Photo} from '../models/photo'
+import { AlertifyService } from '../services/alertify.service';
 
 @Component({
   selector: 'app-photo',
@@ -13,7 +13,7 @@ import {Photo} from '../models/photo'
 export class PhotoComponent implements OnInit {
 
   constructor(private authService:AuthService,
-    private alertifyService:AlertifyService, 
+    private alertifyService:AlertifyService,
     private activatedRoute:ActivatedRoute) { }
 
   photos:Photo[]=[];
@@ -55,6 +55,7 @@ export class PhotoComponent implements OnInit {
           newsId:res.newsId
         }
         this.photos.push(photo)
+        
       }
     }
   }
