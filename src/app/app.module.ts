@@ -24,8 +24,6 @@ import { NewsService } from "./services/news.service";
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SliderComponent } from './slider/slider.component';
 
-
-
 @NgModule({
    declarations: [								
       AppComponent,
