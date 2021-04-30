@@ -1,0 +1,13 @@
+#yanyana_hizalama{
+    float: left;
+}
+img{
+    height: 150px; 
+    width: 100%;
+    object-fit:fill;
+ }
+ #card:hover{color:red;}
+ div {
+
+    white-space:inherit;
+}
