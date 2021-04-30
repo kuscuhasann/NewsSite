@@ -28,9 +28,15 @@
               "font-awesome/css/font-awesome.min.css",
               "bootswatch/dist/minty/bootstrap.min.css",
               "alertifyjs/build/css/alertify.min.css",
-              "alertifyjs/build/css/themes/bootstrap.min.css"
+              "alertifyjs/build/css/themes/bootstrap.min.css",
+              "node_modules/slick-carousel/slick/slick.css",
+              "node_modules/slick-carousel/slick/slick-theme.css"
             ],
-            "scripts": ["node_modules/alertifyjs/build/alertify.min.js"]
+            "scripts": [
+              "node_modules/alertifyjs/build/alertify.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js",
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -21,6 +21,8 @@ import { LoginGuard } from "./login/login.guard";
 import { AuthService } from "./services/auth.service";
 import { CategoryService } from "./services/category.service";
 import { NewsService } from "./services/news.service";
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 
 
 @NgModule({
@@ -43,6 +45,7 @@ import { NewsService } from "./services/news.service";
       FileUploadModule,
       CKEditorModule,
       NgxGalleryModule,
+      SlickCarouselModule,
    ],
   providers: [AlertifyService,LoginGuard,AuthService,CategoryService,NewsService],
   bootstrap: [AppComponent]
