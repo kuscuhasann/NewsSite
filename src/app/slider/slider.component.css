@@ -8,6 +8,13 @@ img{
  }
  #card:hover{color:red;}
  div {
-
+    
     white-space:inherit;
 }
+ .slick-slide img {
+    height:400px;
+ }
+ #slider-cursor
+ {
+    cursor:pointer;
+ }

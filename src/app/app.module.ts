@@ -23,9 +23,10 @@ import { CategoryService } from "./services/category.service";
 import { NewsService } from "./services/news.service";
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SliderComponent } from './slider/slider.component';
+import { ReklamComponent } from './reklam/reklam.component';
 
 @NgModule({
-   declarations: [								
+   declarations: [									
       AppComponent,
       NavComponent,
       PhotoComponent,
@@ -35,7 +36,8 @@ import { SliderComponent } from './slider/slider.component';
       LoginComponent,
       DownNavComponent,
       DownNavComponent,
-      SliderComponent
+      SliderComponent,
+      ReklamComponent
    ],
    imports: [
       BrowserModule,
