@@ -24,6 +24,12 @@ import { NewsService } from "./services/news.service";
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SliderComponent } from './slider/slider.component';
 import { ReklamComponent } from './reklam/reklam.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MaterialModule} from'../core/material.module';
+
+
+
+
 
 @NgModule({
    declarations: [									
@@ -48,6 +54,9 @@ import { ReklamComponent } from './reklam/reklam.component';
       CKEditorModule,
       NgxGalleryModule,
       SlickCarouselModule,
+      FlexLayoutModule,
+      MaterialModule,
+
    ],
   providers: [AlertifyService,LoginGuard,AuthService,CategoryService,NewsService],
   bootstrap: [AppComponent]
