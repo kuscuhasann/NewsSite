@@ -3,3 +3,48 @@ img{
     width: 100%;
     object-fit:fill;
  }
+ ul ,ol
+			{
+				list-style:none;
+			}
+			ol, ul , li
+			{
+				margin:0; padding:0;
+			}
+			.menu a
+			{
+				line-height:25px;
+				font-weight:bold;
+				text-align:center;
+				text-decoration:none;
+				display:block;
+				border:1px solid orange;
+				background:grey;
+				color:black;
+			}
+			.menu a:hover
+			{
+				color:grey;
+				background:yellow;
+			}
+			.menu li
+			{
+				float:left;
+				margin-right:5px;
+				position:relative;
+				width:200px;
+			}
+			.menu ul
+			{
+				display:none;
+				position:absolute;
+			}
+			.menu li:hover > ul
+			{
+				display:block;
+			}
+			.menu ul ul
+			{
+				left:200px;
+				top:0px;
+			}

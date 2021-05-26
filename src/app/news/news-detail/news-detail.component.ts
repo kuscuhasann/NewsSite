@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { NewsService } from "../../services/news.service";
 import { News } from "../../models/news";
 import { Photo } from "../../models/photo";
 import {AuthService} from '../../services/auth.service'
+import { MediaObserver } from '@angular/flex-layout';
 
 import {
   NgxGalleryOptions,
   NgxGalleryImage,
   NgxGalleryAnimation
 } from "ngx-gallery-9";
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-news-detail',
@@ -17,25 +20,46 @@ import {
   styleUrls: ['./news-detail.component.css'],
   providers: [NewsService]
 })
-export class NewsDetailComponent implements OnInit {
+export class NewsDetailComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private authService:AuthService,
     private activatedRoute: ActivatedRoute,
-    private newsService: NewsService
+    private newsService: NewsService,
+    private cdRef: ChangeDetectorRef,
+    private mediaObserver: MediaObserver,
   ) { }
 
   news: News;
   photos: Photo[] = []
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
+  private mediaSub: Subscription;
 
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.getNewsById(params["newsId"]);
     });
+
+    this.mediaSub = this.mediaObserver.asObservable().subscribe(change => {
+      change.forEach((v) => {
+        console.log(v.mediaQuery, v.mqAlias);
+      });
+      console.log('-----');
+    });
   }
+
+  ngAfterViewInit() {
+    this.cdRef.detectChanges();
+  }
+
+  ngOnDestroy() {
+    if (this.mediaSub) {
+      this.mediaSub.unsubscribe();
+    }
+  }
+
   getNewsById(newsId) {
     this.newsService.getNewsById(newsId).subscribe(data => {
       this.news = data;

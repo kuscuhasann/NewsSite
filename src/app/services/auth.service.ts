@@ -16,7 +16,7 @@ constructor(
     private router: Router,
     private alertifyService: AlertifyService
 ) { }
-path = "https://localhost:44322/api/auth/";
+  path = "https://localhost:44322/api/auth/";
 userToken: any;
 decodedToken: any;
 jwtHelper: JwtHelper = new JwtHelper();
@@ -24,6 +24,7 @@ TOKEN_KEY="token"
 login(loginUser: LoginUser) {
   let headers = new HttpHeaders();
   headers = headers.append("Content-Type", "application/json");
+
   this.httpClient
     .post(this.path + "login", loginUser, { headers: headers })
     .subscribe(data => {

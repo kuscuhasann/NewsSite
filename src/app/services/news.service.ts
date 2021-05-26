@@ -15,7 +15,7 @@ constructor(private httpClient: HttpClient,
   private alertifyService:AlertifyService,
   private router:Router) { }
 
-path = "https://localhost:44322/api/news/";
+  path = "https://localhost:44322/api/news/";
 
 getNewsAll(): Observable<News[]> {
   return this.httpClient.get<News[]>(this.path);

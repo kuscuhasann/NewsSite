@@ -66,6 +66,7 @@ export class NewsComponent implements OnInit, AfterViewInit, OnDestroy {
   getNewsForCategories(categoryId:number) {
     this.newsService.getNewsForCategories(categoryId).subscribe(data=>{
       this.news = data
+      this.news= this.news.slice().reverse();
     })   
   }
 

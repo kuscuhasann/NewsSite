@@ -1,17 +1,19 @@
-<div id="background-nav" fxLayout="column">
+<div  id="background-nav" fxLayout="column">
     
 
     <div fxLayoutGap="2%" fxFlex="auto" fxLayoutAlign="space-between center" fxLayout="row"
         class="main-toolbar-wrapper p-3">
 
-        <div fxFlex="10" class="branding pl-2">
+        <div  fxFlex="10" class="branding pl-2">
             <img class="navbar-brand" id="nav-cursor" href="#" src="https://res.cloudinary.com/finarfin/image/upload/v1617455495/akqnc4iyfwuryjeza2yi.png" routerLink="#" alt="" width="150" height="50">
+            
         </div>
 
         <div fxFlex="" fxLayoutAlign="space-around center" fxLayoutGap="2%" fxHide.xs #searchFields>
-        <a *ngFor="let category of category" id="category-color" class="navbar-brand" routerLink="news/category/{{category.id}}/{{category.categoryName}}">{{category.categoryName}}  &nbsp; </a>
+        <a *ngFor="let category of category" id="category-color" class="navbar-brand" routerLink="news/category/{{category.id}}/{{category.categoryName | urlformat}}">{{category.categoryName}}  &nbsp; </a>
         <a class="navbar-brand" *ngIf="isAuthenticated" routerLink="newsadd" routerLinkActive="active">Haber Ekle  &nbsp; </a>
         <button class="btn btn-secondary my-2 my-sm-0" *ngIf="isAuthenticated" (click)="logOut()"  type="submit">Çıkış</button>
+       
     </div>
 
     <!-- Only show on mobile version -->

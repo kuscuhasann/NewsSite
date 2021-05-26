@@ -1,11 +1,7 @@
 #yanyana_hizalama{
     float: left;
 }
-img{
-    height: 150px; 
-    width: 100%;
-    object-fit:fill;
- }
+
  #card:hover{color:red;}
  div {
     
@@ -18,3 +14,22 @@ img{
  {
     cursor:pointer;
  }
+
+
+ @media only screen and (max-width:1372px) {
+	
+   img{
+      height: 150px; 
+      width: 76%;
+      object-fit:fill;
+   }
+   }
+
+@media only screen and (min-width:1373px) {
+	
+      img{
+         height: 150px; 
+         width: 100%;
+         object-fit:fill;
+      }
+      }

@@ -26,10 +26,14 @@ import { SliderComponent } from './slider/slider.component';
 import { ReklamComponent } from './reklam/reklam.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MaterialModule} from'../core/material.module';
-
-
-
-
+import{HashLocationStrategy,LocationStrategy} from '@angular/common';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { UrlformatPipe } from "./pipes/urlformat.pipe";
 
 @NgModule({
    declarations: [									
@@ -43,7 +47,8 @@ import {MaterialModule} from'../core/material.module';
       DownNavComponent,
       DownNavComponent,
       SliderComponent,
-      ReklamComponent
+      ReklamComponent,
+      UrlformatPipe,
    ],
    imports: [
       BrowserModule,
@@ -56,9 +61,16 @@ import {MaterialModule} from'../core/material.module';
       SlickCarouselModule,
       FlexLayoutModule,
       MaterialModule,
+      LayoutModule,
+      MatToolbarModule,
+      MatButtonModule,
+      MatSidenavModule,
+      MatIconModule,
+      MatListModule,
 
    ],
-  providers: [AlertifyService,LoginGuard,AuthService,CategoryService,NewsService],
+  providers: [{provide:LocationStrategy,useClass:HashLocationStrategy},
+     AlertifyService,LoginGuard,AuthService,CategoryService,NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
