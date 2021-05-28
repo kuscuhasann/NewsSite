@@ -7,7 +7,7 @@ export class UrlformatPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
     value = value.toLowerCase();
-    value = value.replace(/["!,.*+?^${}()|[\]\\]/g, "-");
+    value = value.replace(/["'!,.*+?^${}()|[\]\\]/g, "-");
     value = value.replace(/\s/g, "-");
     value = value.replace(/[ç]/g, "c");
     value = value.replace(/[ğ]/g, "g");

@@ -5,6 +5,7 @@ import { NewsComponent } from './news/news.component';
 import { Routes} from "@angular/router"
 import { LoginComponent } from './login/login.component';
 import { LoginGuard } from './login/login.guard';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 export const appRoutes : Routes = [
   
   { path: "news", component: NewsComponent },
@@ -12,6 +13,7 @@ export const appRoutes : Routes = [
   { path: "newsDetail/:newsId/:title", component: NewsDetailComponent },
   { path: "news/category/:categoryId/:categoryName", component:NewsComponent},
   { path: "parathormon", component:LoginComponent},
+  { path: "gizlilik-politikasi", component:PrivacyPolicyComponent},
   { path: "**", redirectTo: "news", pathMatch: "full" },
 
 ];
